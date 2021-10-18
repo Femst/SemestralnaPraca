@@ -1,0 +1,50 @@
+html, body {
+    margin:0px;
+    height:100%;
+    background-color: #1a1a1a;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #1a1a1a;
+}
+
+li {
+    float: right;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #ff8c00;
+}
+
+
+.picture{
+
+    background-image: url("https://www.ncl.ac.uk/mediav8/sport-/Weights-gym-right-aligned.jpg");
+    justify-content: center;
+    height: 500px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: contain;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.gym-text{
+}
