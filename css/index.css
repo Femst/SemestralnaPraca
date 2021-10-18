@@ -32,10 +32,9 @@ li a:hover:not(.active) {
 }
 
 
-.picture{
+#hero-image{
 
     background-image: url("https://www.ncl.ac.uk/mediav8/sport-/Weights-gym-right-aligned.jpg");
-    justify-content: center;
     height: 500px;
     width: 100%;
     display: flex;
