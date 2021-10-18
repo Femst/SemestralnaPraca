@@ -1,7 +1,13 @@
+@import url(https://fonts.googleapis.com/css?family=Merriweather:300,900);
 html, body {
-    margin:0px;
+
+    display: flex;
+    flex-direction: column;
+
+    margin:0;
     height:100%;
     background-color: #1a1a1a;
+    min-height: 100vh
 }
 ul {
     list-style-type: none;
@@ -36,7 +42,7 @@ li a:hover:not(.active) {
     font-size: 4rem;
     color:white;
     background-image: url("https://www.ncl.ac.uk/mediav8/sport-/Weights-gym-right-aligned.jpg");
-    height: 30%;
+    height: 100%;
     width: 100%;
     display: flex;
     align-items: center;
@@ -67,13 +73,12 @@ li a:hover:not(.active) {
 
 }
 footer {
+    margin-top: auto;
 
-
-    padding: 10px 10px 0px 10px;
     bottom: 0;
     width: 100%;
     /* Height of the footer*/
-    height: 5%;
+    height: 10%;
     background: #1e1e1e;
 
 }
@@ -81,6 +86,14 @@ footer p {
     text-align: right;
     margin-right: 10%;
 }
+
 .menu{
     margin-right: 2%;
+}
+p,h1,h2,h3{
+    font: 300 1em/1.5 'Merriweather', serif;
+}
+.page-container{
+    width: 100%;
+    height: 100%;
 }
