@@ -2,7 +2,6 @@
 // Initialize the session
 session_start();
 
-// Check if the user is logged in, if not then redirect him to login page
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: login.php");
     exit;
@@ -14,18 +13,17 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <head>
     <meta charset="UTF-8">
     <title>Welcome</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body{ font: 14px sans-serif; text-align: center; }
     </style>
 </head>
 <body>
-<h1 class="my-5">User :<b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome.</h1>
+<h1>User: <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b></h1>
 <p>
-    <a href="delete.php" class="btn btn-warning">Delete account</a>
-    <a href="index.html" class="btn btn-warning">Home</a>
-    <a href="reset-password.php" class="btn btn-warning">Reset Password</a>
-    <a href="logout.php" class="btn btn-danger ml-3">Sign Out</a>
+    <a href="delete.php" >Delete account</a>
+    <a href="index.html" >Home</a>
+    <a href="reset-password.php" >Reset Password</a>
+    <a href="logout.php" >Sign Out</a>
 </p>
 </body>
 </html>

@@ -10,7 +10,6 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 // config file
 require_once "config.php";
 
-
 $username = $password = "";
 $username_err = $password_err = $login_err = "";
 
@@ -71,7 +70,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     $login_err = "Invalid username or password.";
                 }
             } else{
-                echo "Oops! Something went wrong. Please try again later.";
+                echo "Something went wrong.";
             }
             mysqli_stmt_close($stmt);
         }
@@ -86,38 +85,41 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
     <style>
         body{ font: 14px sans-serif; }
         .wrapper{ width: 360px; padding: 20px; }
     </style>
 </head>
 <body>
-<div class="wrapper">
+<div>
     <h2>Login</h2>
-    <p>Please fill in your credentials to login.</p>
 
     <?php
     if(!empty($login_err)){
-        echo '<div class="alert alert-danger">' . $login_err . '</div>';
+        echo '<div>' . $login_err . '</div>';
     }
     ?>
 
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <div class="form-group">
+        <div>
             <label>Username</label>
-            <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
-            <span class="invalid-feedback"><?php echo $username_err; ?></span>
+            <label>
+                <input type="text" name="username"<?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
+            </label>
+            <span ><?php echo $username_err; ?></span>
         </div>
-        <div class="form-group">
+        <div>
             <label>Password</label>
-            <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
-            <span class="invalid-feedback"><?php echo $password_err; ?></span>
+            <label>
+                <input type="password" name="password"<?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
+            </label>
+            <span><?php echo $password_err; ?></span>
         </div>
-        <div class="form-group">
-            <input type="submit" class="btn btn-primary" value="Login">
+        <div>
+            <input type="submit" value="Login">
         </div>
-        <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
+        <p><a href="register.php">Register</a>.</p>
     </form>
 </div>
 </body>
