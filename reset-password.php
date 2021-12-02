@@ -30,12 +30,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
     }
     if(empty($new_password_err) && empty($confirm_password_err)){
-
         $sql = "UPDATE users SET password = ? WHERE id = ?";
-
         if($stmt = mysqli_prepare($link, $sql)){
             mysqli_stmt_bind_param($stmt, "si", $param_password, $param_id);
-
             $param_password = password_hash($new_password, PASSWORD_DEFAULT);
             $param_id = $_SESSION["id"];
 
@@ -59,7 +56,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <head>
     <meta charset="UTF-8">
     <title>Reset Password</title>
-
     <style>
         body{ font: 14px sans-serif; }
     </style>
@@ -67,7 +63,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <body>
 <div>
     <h2>Reset Password</h2>
-    <p>Please fill out this form to reset your password.</p>
+    <p>Fill out to reset your password.</p>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <div>
             <label>New Password</label>
